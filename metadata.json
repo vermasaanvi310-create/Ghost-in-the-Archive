@@ -1,0 +1,8 @@
+{
+  "name": "Ghost in the Archive",
+  "description": "A privacy-focused digital memory archive and open-weight AI storytelling chamber for historical records, old letters, and forgotten stories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

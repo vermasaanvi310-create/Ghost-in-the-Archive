@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-charcoal: #0B0A0F;
+    --card-surface: #131219;
+    --card-surface-elevated: #191823;
+    --accent-gold: #D6AD62;
+    --accent-gold-glow: rgba(214, 173, 98, 0.25);
+    --accent-burgundy: #642D3A;
+    --accent-burgundy-glow: rgba(100, 45, 58, 0.3);
+    --text-ivory: #F0E8D8;
+    --text-muted: #9E9689;
+    --border-subtle: rgba(214, 173, 98, 0.15);
+    --border-active: rgba(214, 173, 98, 0.4);
+  }
+
+  body {
+    background-color: var(--bg-charcoal);
+    color: var(--text-ivory);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-title {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-manuscript {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+
+  .font-mono-numbers {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom atmospheric glow & candlelight animations */
+@keyframes candleFlicker {
+  0%, 100% {
+    opacity: 0.95;
+    transform: scale(1);
+    filter: drop-shadow(0 0 16px rgba(214, 173, 98, 0.35));
+  }
+  25% {
+    opacity: 0.88;
+    transform: scale(0.995);
+    filter: drop-shadow(0 0 12px rgba(214, 173, 98, 0.25));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 20px rgba(214, 173, 98, 0.45));
+  }
+  75% {
+    opacity: 0.92;
+    transform: scale(0.998);
+    filter: drop-shadow(0 0 14px rgba(214, 173, 98, 0.3));
+  }
+}
+
+@keyframes dustFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-40px) translateX(15px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-90px) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+.candle-glow {
+  animation: candleFlicker 6s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0A0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #252230;
+  border-radius: 3px;
+  border: 1px solid rgba(214, 173, 98, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B3346;
+}
+
+/* Aged Parchment Card Styling */
+.parchment-sheet {
+  background-color: #15131C;
+  border: 1px solid rgba(214, 173, 98, 0.18);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+.parchment-paper-light {
+  background-color: #1A1822;
+  border: 1px solid rgba(214, 173, 98, 0.25);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 0 60px rgba(100, 45, 58, 0.08);
+}
